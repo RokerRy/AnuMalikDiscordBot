@@ -1,4 +1,4 @@
-git+https://github.com/Rapptz/discord.py
+discord.py
 youtube_dl
 dotenv
 dnspython==1.16.0
