@@ -160,6 +160,7 @@ class final_Music(commands.Cog):
     @commands.command(name='join')
     async def _join(self, ctx: commands.Context):
         destination=discord.utils.get(ctx.guild.voice_channels,id=ctx.author.voice.channel.id)
+        print(destination)
         if ctx.voice_state.voice:
             await ctx.voice_state.voice.move_to(destination)
             return
