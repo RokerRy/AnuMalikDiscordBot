@@ -154,6 +154,7 @@ class final_Music(commands.Cog):
     @commands.command(name='log')
     async def logPlaying(self,ctx: commands.Context):
         if ctx.voice_state.is_playing:
+            print(self.voice_states)
             print("Playing")
 
     @commands.command(name='join')
