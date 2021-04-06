@@ -1,4 +1,5 @@
 .env
 .ipynb_checkpoints
 bot-vs-workspace.code-workspace
+testbot.py
 test.py
