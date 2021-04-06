@@ -132,7 +132,6 @@ class final_Music(commands.Cog):
         if not state:
             state = VC(self.bot, ctx)
             self.voice_states[ctx.guild.id] = state
-
         return state
 
     def cog_unload(self):
@@ -154,13 +153,12 @@ class final_Music(commands.Cog):
     @commands.command(name='log')
     async def logPlaying(self,ctx: commands.Context):
         if ctx.voice_state.is_playing:
-            print(self.voice_states)
+            print(ctx.voice_state)
             print("Playing")
 
     @commands.command(name='join')
     async def _join(self, ctx: commands.Context):
         destination=discord.utils.get(ctx.guild.voice_channels,id=ctx.author.voice.channel.id)
-        print(destination)
         if ctx.voice_state.voice:
             await ctx.voice_state.voice.move_to(destination)
             return
