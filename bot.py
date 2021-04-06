@@ -42,7 +42,9 @@ class Song:
     def __init__(self,search:str):
         request=youtube.search().list(q=search,part="snippet",type='video',order="relevance",maxResults=1)
         responce=request.execute()
-        print(responce)
+        # print(responce)
+        for i in responce['items']:
+            print(i['snippet']['title'])
         self.url="https://youtu.be/"+responce['items'][0]['id']['videoId']
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             self.info = ydl.extract_info(self.url, download=False)
@@ -219,7 +221,8 @@ class final_Music(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(name='play')
-    async def play(self,ctx: commands.Context,search:str):
+    async def play(self,ctx: commands.Context,*args):
+        search=" ".join(args)
         if(ctx.author.voice!=None):
             if not ctx.voice_state.voice:
                 await ctx.invoke(self._join)
