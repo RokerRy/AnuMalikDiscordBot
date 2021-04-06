@@ -232,9 +232,7 @@ class final_Music(commands.Cog):
             if not ctx.voice_state.voice:
                 await ctx.invoke(self._join)
             song=Song(search)
-            print(bot.voice_clients)
             ctx.voice_state.voice=discord.utils.get(bot.voice_clients, guild=ctx.guild)
-            print(ctx.voice_state.voice)
             await ctx.voice_state.songs.put(song)
             await ctx.send(embed=song.songEmbed)
         else:
