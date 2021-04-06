@@ -151,6 +151,11 @@ class final_Music(commands.Cog):
     async def cog_command_error(self, ctx: commands.Context, error: commands.CommandError):
         await ctx.send('An error occurred: {}'.format(str(error)))
 
+    @commands.command(name='log')
+    async def logPlaying(self,ctx: commands.Context):
+        if ctx.voice_state.is_playing:
+            print("Playing")
+
     @commands.command(name='join')
     async def _join(self, ctx: commands.Context):
         destination=discord.utils.get(ctx.guild.voice_channels,id=ctx.author.voice.channel.id)
