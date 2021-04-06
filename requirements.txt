@@ -1,4 +1,5 @@
 discord.py
+PyNaCl
 youtube_dl
 dnspython==1.16.0
 google-api-python-client
