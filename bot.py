@@ -40,7 +40,7 @@ async def on_ready():
 
 class Song:
     def __init__(self,search:str):
-        request=youtube.search().list(q=search,part="snippet",type='video',location="51.5074,0.1278",locationRadius="500km",order="relevance",maxResults=1)
+        request=youtube.search().list(q=search,part="snippet",type='video',order="relevance",maxResults=1)
         responce=request.execute()
         print(responce)
         self.url="https://youtu.be/"+responce['items'][0]['id']['videoId']
