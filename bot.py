@@ -8,13 +8,13 @@ import discord
 import random
 import itertools
 import math
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import googleapiclient.discovery
 
 # Silence useless bug reports messages
 youtube_dl.utils.bug_reports_message = lambda: ''
 
-# load_dotenv()
+load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 api_key=os.getenv('YOUTUBE_API')
 api_service_name = "youtube"
